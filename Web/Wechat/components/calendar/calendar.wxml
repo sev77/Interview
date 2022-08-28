@@ -1,0 +1,31 @@
+<!--components/calendar.wxml-->
+<view class="public-float" wx:if="{{isShowCalendar}}">
+  <view class="calendar-box center-posi-whole radius20">
+    <!-- 日期 -->
+    <view class="calendar-date re">
+      <view class="calendar-date-time re center-flex-whole">{{currentChooseYear + '年' + currentChooseMonth + '月'}}</view>
+      <view bindtap="changeCalendarPage" wx:if="{{currentCalendarPage>0 && currentCalendarPage<=50}}" data-type="0" class="calendar-date-prev ab center-flex-wrap"> 前 </view>
+      <view bindtap="changeCalendarPage" wx:if="{{currentCalendarPage>=0 && currentCalendarPage<50}}" data-type="1" class="calendar-date-next ab center-flex-wrap"> 后 </view>
+    </view>
+    <!-- 星期 -->
+    <view class="calendar-week re">
+      <block wx:for="{{calendarHeadWeek}}" wx:key="index">
+        <view class="calendar-week-single re center-flex-whole">{{item}}</view>
+      </block>
+    </view>
+    <!-- 天 -->
+    <view class="calendar-day re">
+      <block wx:for="{{lastMonthRestDays}}" wx:key="index">
+        <view bindtap="chooseDate" data-type="0" data-date="{{item.Number}}" class="calendar-day-single re center-flex-whole {{item.timeStamp <= todayTimeStamp?'color1':''}} {{item.red?'red':''}} {{item.choose?'choose':''}}">{{item.Number}}</view>
+      </block>
+      <block wx:for="{{currentMonthDayCont}}" wx:key="index">
+        <view bindtap="chooseDate" data-type="1" data-date="{{item.Number}}" class="calendar-day-single re center-flex-whole {{item.timeStamp <= todayTimeStamp?'color1':''}}  {{item.red?'red':''}} {{item.choose?'choose':''}}">{{item.Number}}</view>
+      </block>
+      <block wx:for="{{nextMonthRestDays}}" wx:key="index">
+        <view bindtap="chooseDate" data-type="2" data-date="{{item.Number}}" class="calendar-day-single re center-flex-whole  {{item.timeStamp <= todayTimeStamp?'color1':''}} {{item.red?'red':''}} {{item.choose?'choose':''}}">{{item.Number}}</view>
+      </block>
+    </view>
+    <!-- 按钮 -->
+    <view bindtap="confirmDates" class="calendar-btn re radius15 center-flex-whole">确认</view>
+  </view>
+</view>

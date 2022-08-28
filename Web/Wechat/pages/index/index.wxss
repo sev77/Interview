@@ -1,0 +1,5 @@
+.public-content{ background: rgb(9, 50, 170); }
+
+.calendar-icon{ width: 80rpx; height: 80rpx; background: rgb(175, 148, 148); font-size: 24rpx; color: #000; right: 40rpx; top: 40rpx; }
+
+.word{ width: 100%; text-align: center; padding: 0 20rpx; font-size: 24rpx; color: #ccc; top: 200rpx; }

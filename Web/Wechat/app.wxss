@@ -1,0 +1,116 @@
+/*********************************重置标签样式****************************************/
+
+/**去掉button默认属性**/
+button{ width: 100% !important; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0); border: none; padding: 0; margin: 0; min-height: 0; line-height: 0; font-size: 0; }
+
+view , input{ font-size: 0; box-sizing: border-box; }
+
+/************************************** 公用层 ****************************************/
+
+.public-phone , .public-scenes , .public-content , .public-float , .public-full { width:100%; height:100%; position: absolute; top: 0; left: 0; overflow: hidden; }
+
+/**撑满屏幕**/
+.public-phone{ width: 100vw; height: 100vh; }
+
+/* 场景层 */
+.public-scenes{ background:#fff; }
+/* 内容层 */
+.public-content
+/* 浮层 */
+.public-float{ background: rgba(0, 0, 0, 0.7); }
+/* 撑满父级 */
+.public-full{ overflow: initial; }
+
+/************************************** 样式库 **************************************/
+
+/*定位：相对.绝对.固定*/
+.re{ position:relative; }
+.ab{ position:absolute; }
+.fixed{ position:fixed; }
+
+/* 超出显示省略号-单行 */
+.ellipsis-oneway{ white-space:nowrap; text-overflow:ellipsis; overflow:hidden; }
+/* 超出显示省略号-多行 */
+.ellipsis-multiline{ display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+
+/* 居中-text-撑满父级 */
+.center-text{ width:100%; text-align:center; }
+/* 居中-绝对定位-X */
+.center-posi-x{ position:absolute; left:50%; transform:translateX(-50%); }
+/* 居中-绝对定位-Y */
+.center-posi-y{ position:absolute; top:50%; transform:translateY(-50%); }
+/* 居中-绝对定位-X+Y */
+.center-posi-whole{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); }
+/* 居中-flex定位-X */
+.center-flex-x{ display:flex; justify-content:center; }
+/* 居中-flex定位-Y-单个 */
+.center-flex-y-single{ display:flex; align-items:center; }
+/* 居中-flex定位-Y-多个 */
+.center-flex-y-multiple{ display:flex; align-content:center; }
+/* 居中-flex定位-X+Y-单个 */
+.center-flex-whole{ display:flex; justify-content:center; align-items:center; }
+/* 居中-flex定位-X+Y-多个 */
+.center-flex-wrap{ display:flex; flex-wrap:wrap; justify-content:center; align-content:center; }
+
+/* 对齐-居中对齐 */
+.align-center{ display:inline-block; vertical-align:middle; }
+/* 对齐-居顶对齐 */
+.align-top{ display:inline-block; vertical-align:top; }
+/* 对齐-居底对齐 */
+.align-bottom{ display:inline-block; vertical-align:bottom; }
+/* 对齐-两端对齐 */
+.align-justify{ display:flex; justify-content:space-between; align-items:center; }
+
+/* 文字大小 */
+.size18{ font-size: 18rpx; }
+.size20{ font-size: 20rpx; }
+.size21{ font-size: 21rpx; }
+.size22{ font-size: 22rpx; }
+.size23{ font-size: 23rpx; }
+.size24{ font-size: 24rpx; }
+.size25{ font-size: 25rpx; }
+.size26{ font-size: 26rpx; }
+.size27{ font-size: 27rpx; }
+.size28{ font-size: 28rpx; }
+.size30{ font-size: 30rpx; }
+.size32{ font-size: 32rpx; }
+.size38{ font-size: 38rpx; }
+.size40{ font-size: 40rpx; }
+.size42{ font-size: 42rpx; }
+.size50{ font-size: 50rpx; }
+
+/* 圆角角度 */
+.radius10{ border-radius: 10rpx; }
+.radius15{ border-radius: 15rpx; }
+.radius20{ border-radius: 20rpx; }
+.radius25{ border-radius: 25rpx; }
+.radius30{ border-radius: 30rpx; }
+.radius42{ border-radius: 42rpx; }
+.radius50{ border-radius: 50rpx; }
+.radius-half{ border-radius: 50%; overflow: hidden; }
+
+/*券上边的半圆形-左右*/
+.copon-semicircle{ filter:drop-shadow(-2.08px 16.67px 41.67px rgba(80, 212, 122, 0.46)); background:radial-gradient(circle at center left,transparent 10px, #fff 0) left,radial-gradient(circle at center right,transparent 10px, #fff 0) right;background-size:50% 100%;background-repeat:no-repeat; }
+
+/* 清除浮动 */
+.clear-float:after{ content: ""; display: block; clear: both; }
+
+/************************************************************************************/
+
+
+/* 动画名称-动画时间-延迟时间-动画次数-动画速度 */
+/**旋转**/
+.goodsrotate{ -webkit-animation: goodsrotate 2500ms 0ms infinite linear both; }
+@keyframes goodsrotate{
+    0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+}
+
+
+/* 指示点样式在公共样式才管用 */
+/**指示点父级**/
+.swiper .wx-swiper-dots.wx-swiper-dots-horizontal{ margin-bottom: 20rpx; }
+/**默认指示点**/
+.swiper .wx-swiper-dot{ width:7rpx; height: 7rpx; margin-left: 12rpx; border-radius: 50%; }
+/**选中指示点**/
+.swiper .wx-swiper-dot-active { width: 42rpx; height: 7rpx; border-radius: 10rpx; }

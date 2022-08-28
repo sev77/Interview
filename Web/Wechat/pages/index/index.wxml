@@ -1,0 +1,15 @@
+<view class="public-phone">
+  <view class="public-scenes">
+    <view class="public-content">
+
+      <!-- 日历按钮 -->
+      <view bindtap="showCalendarFloat" class="calendar-icon ab center-flex-whole radius-half">日历</view>
+
+      <!-- 选中文字 -->
+      <view class="word ab">{{word}}</view>
+
+      <calendar id="calendar" isShowCalendar="{{showCalendar}}" bind:hideCalendar="hideCalendar" />
+
+    </view>
+  </view>
+</view>
